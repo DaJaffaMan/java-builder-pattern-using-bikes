@@ -2,22 +2,27 @@ package bike_builder;
 
 public class Bike {
 
-    private int numberOfWheels;
+    private final BikeType typeOfBike;
 
-    public Bike(BikeBuilder bikeBuilder) {
+    private Bike(BikeBuilder bikeBuilder) {
+        this.typeOfBike = bikeBuilder.typeOfBike;
+    }
 
+    public String getBikeType() {
+        return typeOfBike.name().toLowerCase();
     }
 
     public int getNumberOfWheels() {
-        return numberOfWheels;
+        return typeOfBike.getNumberOfWheels();
     }
 
-    class BikeBuilder {
+    public static class BikeBuilder {
 
-        private int numberOfWheels;
+        private BikeType typeOfBike;
 
-        public void withNumberOfWheels(int numberOfWheels) {
-            this.numberOfWheels = numberOfWheels;
+        public BikeBuilder withBikeTypeAs(BikeType bikeType) {
+            this.typeOfBike = bikeType;
+            return this;
         }
 
         public Bike build() {
