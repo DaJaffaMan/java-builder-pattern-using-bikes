@@ -16,6 +16,16 @@ public class Bike {
         return typeOfBike.getNumberOfWheels();
     }
 
+    @Override
+    public String toString(){
+        String s = "";
+
+        if(getNumberOfWheels() > 1) {
+            s = "s";
+        }
+        return getBikeType() + " has " + getNumberOfWheels() + " wheel" + s;
+    }
+
     public static class BikeBuilder {
 
         private BikeType typeOfBike;
