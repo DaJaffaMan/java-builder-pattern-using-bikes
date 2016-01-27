@@ -18,12 +18,10 @@ public class Bike {
 
     @Override
     public String toString(){
-        String s = "";
 
-        if(getNumberOfWheels() > 1) {
-            s = "s";
-        }
-        return getBikeType() + " has " + getNumberOfWheels() + " wheel" + s;
+        String s = getNumberOfWheels() > 1 ? " wheels" : " wheel";
+
+        return getBikeType() + " has " + getNumberOfWheels() + s;
     }
 
     public static class BikeBuilder {
