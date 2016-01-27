@@ -19,9 +19,9 @@ public class Bike {
     @Override
     public String toString(){
 
-        String s = getNumberOfWheels() > 1 ? " wheels" : " wheel";
+        String s = getNumberOfWheels() > 1 ? "wheels" : "wheel";
 
-        return getBikeType() + " has " + getNumberOfWheels() + s;
+        return String.format("a %s has %s %s", getBikeType(), getNumberOfWheels(), s);
     }
 
     public static class BikeBuilder {
